@@ -32,7 +32,7 @@ $ pip install -r requirements.txt
 ## Training 
 
 ```
-$ fill_this_part
+$ python train_t2t_ner.py [--argument options]
 ```
 
 
