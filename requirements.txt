@@ -1,0 +1,8 @@
+torch
+black
+pytorch-lightning
+transformers[sentencepiece]
+datasets
+setproctitle
+seqeval
+evaluate

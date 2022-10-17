@@ -1,0 +1,404 @@
+{'cross_validation': False, 'fold': 5, 'checkpoint': './model/kt-ulm-small', 'output_dir': 'kt-ulm-small', 'batch_size': 12, 'num_train_epochs': 10, 'learning_rate': 4e-05, 'max_input_length': 512, 'max_target_length': 128, 'early_stopping_patience': 2, 'cross_validatione': False}
+-------- val_split_dataset--------
+ DatasetDict({
+    train: Dataset({
+        features: ['sentence', 'label'],
+        num_rows: 99849
+    })
+    val: Dataset({
+        features: ['sentence', 'label'],
+        num_rows: 24963
+    })
+})
+--------tokenized_datasets--------
+ DatasetDict({
+    train: Dataset({
+        features: ['sentence', 'label', 'input_ids', 'attention_mask', 'labels'],
+        num_rows: 99849
+    })
+    val: Dataset({
+        features: ['sentence', 'label', 'input_ids', 'attention_mask', 'labels'],
+        num_rows: 24963
+    })
+})
+#### train ######
+Attempted to log scalar metric eval_loss:
+0.14302745461463928
+Attempted to log scalar metric eval_runtime:
+117.319
+Attempted to log scalar metric eval_samples_per_second:
+212.779
+Attempted to log scalar metric epoch:
+0.06
+{'eval_loss': 0.14302745461463928, 'eval_runtime': 117.319, 'eval_samples_per_second': 212.779, 'epoch': 0.06}
+Attempted to log scalar metric eval_loss:
+0.0997358113527298
+Attempted to log scalar metric eval_runtime:
+117.542
+Attempted to log scalar metric eval_samples_per_second:
+212.375
+Attempted to log scalar metric epoch:
+0.12
+{'eval_loss': 0.0997358113527298, 'eval_runtime': 117.542, 'eval_samples_per_second': 212.375, 'epoch': 0.12}
+Attempted to log scalar metric eval_loss:
+0.0805293619632721
+Attempted to log scalar metric eval_runtime:
+229.4936
+Attempted to log scalar metric eval_samples_per_second:
+108.774
+Attempted to log scalar metric epoch:
+0.18
+{'eval_loss': 0.0805293619632721, 'eval_runtime': 229.4936, 'eval_samples_per_second': 108.774, 'epoch': 0.18}
+Attempted to log scalar metric eval_loss:
+0.07096714526414871
+Attempted to log scalar metric eval_runtime:
+329.8979
+Attempted to log scalar metric eval_samples_per_second:
+75.669
+Attempted to log scalar metric epoch:
+0.24
+{'eval_loss': 0.07096714526414871, 'eval_runtime': 329.8979, 'eval_samples_per_second': 75.669, 'epoch': 0.24}
+Attempted to log scalar metric eval_loss:
+0.06925368309020996
+Attempted to log scalar metric eval_runtime:
+331.757
+Attempted to log scalar metric eval_samples_per_second:
+75.245
+Attempted to log scalar metric epoch:
+0.3
+{'eval_loss': 0.06925368309020996, 'eval_runtime': 331.757, 'eval_samples_per_second': 75.245, 'epoch': 0.3}
+Attempted to log scalar metric eval_loss:
+0.06242431327700615
+Attempted to log scalar metric eval_runtime:
+326.835
+Attempted to log scalar metric eval_samples_per_second:
+76.378
+Attempted to log scalar metric epoch:
+0.36
+{'eval_loss': 0.06242431327700615, 'eval_runtime': 326.835, 'eval_samples_per_second': 76.378, 'epoch': 0.36}
+Attempted to log scalar metric eval_loss:
+0.05784214287996292
+Attempted to log scalar metric eval_runtime:
+327.7609
+Attempted to log scalar metric eval_samples_per_second:
+76.162
+Attempted to log scalar metric epoch:
+0.42
+{'eval_loss': 0.05784214287996292, 'eval_runtime': 327.7609, 'eval_samples_per_second': 76.162, 'epoch': 0.42}
+Attempted to log scalar metric eval_loss:
+0.056039564311504364
+Attempted to log scalar metric eval_runtime:
+328.9435
+Attempted to log scalar metric eval_samples_per_second:
+75.888
+Attempted to log scalar metric epoch:
+0.48
+{'eval_loss': 0.056039564311504364, 'eval_runtime': 328.9435, 'eval_samples_per_second': 75.888, 'epoch': 0.48}
+Attempted to log scalar metric eval_loss:
+0.05329236388206482
+Attempted to log scalar metric eval_runtime:
+290.3208
+Attempted to log scalar metric eval_samples_per_second:
+85.984
+Attempted to log scalar metric epoch:
+0.54
+{'eval_loss': 0.05329236388206482, 'eval_runtime': 290.3208, 'eval_samples_per_second': 85.984, 'epoch': 0.54}
+Attempted to log scalar metric eval_loss:
+0.05155561864376068
+Attempted to log scalar metric eval_runtime:
+295.4884
+Attempted to log scalar metric eval_samples_per_second:
+84.48
+Attempted to log scalar metric epoch:
+0.6
+{'eval_loss': 0.05155561864376068, 'eval_runtime': 295.4884, 'eval_samples_per_second': 84.48, 'epoch': 0.6}
+Attempted to log scalar metric eval_loss:
+0.04952988028526306
+Attempted to log scalar metric eval_runtime:
+277.5204
+Attempted to log scalar metric eval_samples_per_second:
+89.95
+Attempted to log scalar metric epoch:
+0.66
+{'eval_loss': 0.04952988028526306, 'eval_runtime': 277.5204, 'eval_samples_per_second': 89.95, 'epoch': 0.66}
+Attempted to log scalar metric eval_loss:
+0.04638318717479706
+Attempted to log scalar metric eval_runtime:
+270.7349
+Attempted to log scalar metric eval_samples_per_second:
+92.205
+Attempted to log scalar metric epoch:
+0.72
+{'eval_loss': 0.04638318717479706, 'eval_runtime': 270.7349, 'eval_samples_per_second': 92.205, 'epoch': 0.72}
+Attempted to log scalar metric eval_loss:
+0.0490436814725399
+Attempted to log scalar metric eval_runtime:
+276.1781
+Attempted to log scalar metric eval_samples_per_second:
+90.387
+Attempted to log scalar metric epoch:
+0.78
+{'eval_loss': 0.0490436814725399, 'eval_runtime': 276.1781, 'eval_samples_per_second': 90.387, 'epoch': 0.78}
+Attempted to log scalar metric eval_loss:
+0.044149208813905716
+Attempted to log scalar metric eval_runtime:
+287.078
+Attempted to log scalar metric eval_samples_per_second:
+86.955
+Attempted to log scalar metric epoch:
+0.84
+{'eval_loss': 0.044149208813905716, 'eval_runtime': 287.078, 'eval_samples_per_second': 86.955, 'epoch': 0.84}
+Attempted to log scalar metric eval_loss:
+0.043775007128715515
+Attempted to log scalar metric eval_runtime:
+245.02
+Attempted to log scalar metric eval_samples_per_second:
+101.881
+Attempted to log scalar metric epoch:
+0.9
+{'eval_loss': 0.043775007128715515, 'eval_runtime': 245.02, 'eval_samples_per_second': 101.881, 'epoch': 0.9}
+Attempted to log scalar metric eval_loss:
+0.044630084186792374
+Attempted to log scalar metric eval_runtime:
+112.8808
+Attempted to log scalar metric eval_samples_per_second:
+221.145
+Attempted to log scalar metric epoch:
+0.96
+{'eval_loss': 0.044630084186792374, 'eval_runtime': 112.8808, 'eval_samples_per_second': 221.145, 'epoch': 0.96}
+Attempted to log scalar metric loss:
+0.1151
+Attempted to log scalar metric learning_rate:
+3.600048071145295e-05
+Attempted to log scalar metric epoch:
+1.0
+{'loss': 0.1151, 'learning_rate': 3.600048071145295e-05, 'epoch': 1.0}
+Attempted to log scalar metric eval_loss:
+0.044521085917949677
+Attempted to log scalar metric eval_runtime:
+49.241
+Attempted to log scalar metric eval_samples_per_second:
+506.955
+Attempted to log scalar metric epoch:
+1.02
+{'eval_loss': 0.044521085917949677, 'eval_runtime': 49.241, 'eval_samples_per_second': 506.955, 'epoch': 1.02}
+Attempted to log scalar metric train_runtime:
+6147.3551
+Attempted to log scalar metric train_samples_per_second:
+13.536
+Attempted to log scalar metric total_flos:
+4228880471562240
+Attempted to log scalar metric epoch:
+1.02
+{'train_runtime': 6147.3551, 'train_samples_per_second': 13.536, 'epoch': 1.02}
+#### evaluate ######
+Attempted to log scalar metric eval_loss:
+0.043775007128715515
+Attempted to log scalar metric eval_runtime:
+48.6951
+Attempted to log scalar metric eval_samples_per_second:
+512.639
+Attempted to log scalar metric epoch:
+1.02
+{'cross_validation': False, 'fold': 5, 'checkpoint': './model/kt-ulm-small', 'output_dir': 'kt-ulm-small-case2', 'batch_size': 12, 'num_train_epochs': 10, 'learning_rate': 4e-05, 'max_input_length': 512, 'max_target_length': 128, 'early_stopping_patience': 2, 'cross_validatione': False}
+-------- val_split_dataset--------
+ DatasetDict({
+    train: Dataset({
+        features: ['sentence', 'label'],
+        num_rows: 99849
+    })
+    val: Dataset({
+        features: ['sentence', 'label'],
+        num_rows: 24963
+    })
+})
+--------tokenized_datasets--------
+ DatasetDict({
+    train: Dataset({
+        features: ['sentence', 'label', 'input_ids', 'attention_mask', 'labels'],
+        num_rows: 99849
+    })
+    val: Dataset({
+        features: ['sentence', 'label', 'input_ids', 'attention_mask', 'labels'],
+        num_rows: 24963
+    })
+})`
+#### train ######
+Attempted to log scalar metric eval_loss:
+0.14302745461463928
+Attempted to log scalar metric eval_runtime:
+92.7184
+Attempted to log scalar metric eval_samples_per_second:
+269.235
+Attempted to log scalar metric epoch:
+0.06
+{'eval_loss': 0.14302745461463928, 'eval_runtime': 92.7184, 'eval_samples_per_second': 269.235, 'epoch': 0.06}
+Attempted to log scalar metric eval_loss:
+0.0997358113527298
+Attempted to log scalar metric eval_runtime:
+207.8914
+Attempted to log scalar metric eval_samples_per_second:
+120.077
+Attempted to log scalar metric epoch:
+0.12
+{'eval_loss': 0.0997358113527298, 'eval_runtime': 207.8914, 'eval_samples_per_second': 120.077, 'epoch': 0.12}
+Attempted to log scalar metric eval_loss:
+0.0805293619632721
+Attempted to log scalar metric eval_runtime:
+242.7513
+Attempted to log scalar metric eval_samples_per_second:
+102.834
+Attempted to log scalar metric epoch:
+0.18
+{'eval_loss': 0.0805293619632721, 'eval_runtime': 242.7513, 'eval_samples_per_second': 102.834, 'epoch': 0.18}
+Attempted to log scalar metric eval_loss:
+0.07096714526414871
+Attempted to log scalar metric eval_runtime:
+234.9955
+Attempted to log scalar metric eval_samples_per_second:
+106.228
+Attempted to log scalar metric epoch:
+0.24
+{'eval_loss': 0.07096714526414871, 'eval_runtime': 234.9955, 'eval_samples_per_second': 106.228, 'epoch': 0.24}
+Attempted to log scalar metric eval_loss:
+0.06925368309020996
+Attempted to log scalar metric eval_runtime:
+254.3277
+Attempted to log scalar metric eval_samples_per_second:
+98.153
+Attempted to log scalar metric epoch:
+0.3
+{'eval_loss': 0.06925368309020996, 'eval_runtime': 254.3277, 'eval_samples_per_second': 98.153, 'epoch': 0.3}
+Attempted to log scalar metric eval_loss:
+0.06242431327700615
+Attempted to log scalar metric eval_runtime:
+265.4675
+Attempted to log scalar metric eval_samples_per_second:
+94.034
+Attempted to log scalar metric epoch:
+0.36
+{'eval_loss': 0.06242431327700615, 'eval_runtime': 265.4675, 'eval_samples_per_second': 94.034, 'epoch': 0.36}
+Attempted to log scalar metric eval_loss:
+0.05784214287996292
+Attempted to log scalar metric eval_runtime:
+269.008
+Attempted to log scalar metric eval_samples_per_second:
+92.797
+Attempted to log scalar metric epoch:
+0.42
+{'eval_loss': 0.05784214287996292, 'eval_runtime': 269.008, 'eval_samples_per_second': 92.797, 'epoch': 0.42}
+Attempted to log scalar metric eval_loss:
+0.056039564311504364
+Attempted to log scalar metric eval_runtime:
+269.0619
+Attempted to log scalar metric eval_samples_per_second:
+92.778
+Attempted to log scalar metric epoch:
+0.48
+{'eval_loss': 0.056039564311504364, 'eval_runtime': 269.0619, 'eval_samples_per_second': 92.778, 'epoch': 0.48}
+Attempted to log scalar metric eval_loss:
+0.05329236388206482
+Attempted to log scalar metric eval_runtime:
+260.465
+Attempted to log scalar metric eval_samples_per_second:
+95.84
+Attempted to log scalar metric epoch:
+0.54
+{'eval_loss': 0.05329236388206482, 'eval_runtime': 260.465, 'eval_samples_per_second': 95.84, 'epoch': 0.54}
+Attempted to log scalar metric eval_loss:
+0.05155561864376068
+Attempted to log scalar metric eval_runtime:
+264.521
+Attempted to log scalar metric eval_samples_per_second:
+94.371
+Attempted to log scalar metric epoch:
+0.6
+{'eval_loss': 0.05155561864376068, 'eval_runtime': 264.521, 'eval_samples_per_second': 94.371, 'epoch': 0.6}
+Attempted to log scalar metric eval_loss:
+0.04952988028526306
+Attempted to log scalar metric eval_runtime:
+270.0342
+Attempted to log scalar metric eval_samples_per_second:
+92.444
+Attempted to log scalar metric epoch:
+0.66
+{'eval_loss': 0.04952988028526306, 'eval_runtime': 270.0342, 'eval_samples_per_second': 92.444, 'epoch': 0.66}
+Attempted to log scalar metric eval_loss:
+0.04638318717479706
+Attempted to log scalar metric eval_runtime:
+269.8479
+Attempted to log scalar metric eval_samples_per_second:
+92.508
+Attempted to log scalar metric epoch:
+0.72
+{'eval_loss': 0.04638318717479706, 'eval_runtime': 269.8479, 'eval_samples_per_second': 92.508, 'epoch': 0.72}
+Attempted to log scalar metric eval_loss:
+0.0490436814725399
+Attempted to log scalar metric eval_runtime:
+263.8011
+Attempted to log scalar metric eval_samples_per_second:
+94.628
+Attempted to log scalar metric epoch:
+0.78
+{'eval_loss': 0.0490436814725399, 'eval_runtime': 263.8011, 'eval_samples_per_second': 94.628, 'epoch': 0.78}
+Attempted to log scalar metric eval_loss:
+0.044149208813905716
+Attempted to log scalar metric eval_runtime:
+261.3414
+Attempted to log scalar metric eval_samples_per_second:
+95.519
+Attempted to log scalar metric epoch:
+0.84
+{'eval_loss': 0.044149208813905716, 'eval_runtime': 261.3414, 'eval_samples_per_second': 95.519, 'epoch': 0.84}
+Attempted to log scalar metric eval_loss:
+0.043775007128715515
+Attempted to log scalar metric eval_runtime:
+184.4418
+Attempted to log scalar metric eval_samples_per_second:
+135.343
+Attempted to log scalar metric epoch:
+0.9
+{'eval_loss': 0.043775007128715515, 'eval_runtime': 184.4418, 'eval_samples_per_second': 135.343, 'epoch': 0.9}
+Attempted to log scalar metric eval_loss:
+0.044630084186792374
+Attempted to log scalar metric eval_runtime:
+307.9706
+Attempted to log scalar metric eval_samples_per_second:
+81.056
+Attempted to log scalar metric epoch:
+0.96
+{'eval_loss': 0.044630084186792374, 'eval_runtime': 307.9706, 'eval_samples_per_second': 81.056, 'epoch': 0.96}
+Attempted to log scalar metric loss:
+0.1151
+Attempted to log scalar metric learning_rate:
+3.600048071145295e-05
+Attempted to log scalar metric epoch:
+1.0
+{'loss': 0.1151, 'learning_rate': 3.600048071145295e-05, 'epoch': 1.0}
+Attempted to log scalar metric eval_loss:
+0.044521085917949677
+Attempted to log scalar metric eval_runtime:
+341.6838
+Attempted to log scalar metric eval_samples_per_second:
+73.059
+Attempted to log scalar metric epoch:
+1.02
+{'eval_loss': 0.044521085917949677, 'eval_runtime': 341.6838, 'eval_samples_per_second': 73.059, 'epoch': 1.02}
+Attempted to log scalar metric train_runtime:
+5967.1219
+Attempted to log scalar metric train_samples_per_second:
+13.945
+Attempted to log scalar metric total_flos:
+4228880471562240
+Attempted to log scalar metric epoch:
+1.02
+{'train_runtime': 5967.1219, 'train_samples_per_second': 13.945, 'epoch': 1.02}
+#### evaluate ######
+Attempted to log scalar metric eval_loss:
+0.043775007128715515
+Attempted to log scalar metric eval_runtime:
+225.9319
+Attempted to log scalar metric eval_samples_per_second:
+110.489
+Attempted to log scalar metric epoch:
+1.02
