@@ -26,20 +26,21 @@ python 3.8 버전 및 GPU 환경을 권장합니다. (pytorch=^1.11.0)
 ### Requirements 
 
 ```
-$ pip install -r requirements.txt
+conda install pytorch torchvision torchaudio cudatoolkit=<CUDA 버전> -c pytorch
+pip install -r requirements.txt
 ```
 
 ## Training 
 
 ```
-$ python train_t2t_ner.py [--argument options]
+bash train.sh
 ```
 
 
 ## Testing 
 
 ```
-$ fill_this_part
+bash evaluate.sh
 ```
 
 ## Scores 
