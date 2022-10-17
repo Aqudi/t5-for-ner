@@ -21,7 +21,7 @@
 
 ### Setting 
 
-python 3.8 버전 및 GPU 환경을 권장합니다. 
+python 3.8 버전 및 GPU 환경을 권장합니다. (pytorch=^1.11.0)
 
 ### Requirements 
 
