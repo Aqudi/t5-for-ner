@@ -1,12 +1,8 @@
+import pytorch_lightning as pl
 import torch
 import torch.nn.functional as F
 from torch.optim import AdamW
-
-from transformers import (
-    AutoModelForSeq2SeqLM,
-    get_linear_schedule_with_warmup,
-)
-import pytorch_lightning as pl
+from transformers import AutoModelForSeq2SeqLM, get_linear_schedule_with_warmup
 
 
 class T5NerFineTuner(pl.LightningModule):

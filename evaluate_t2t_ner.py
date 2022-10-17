@@ -1,16 +1,12 @@
-import argparse
-
-from evaluation_config import args_dict
-
 # 나머지 import
 import argparse
-from evaluation_module import T5NerFineTuner
-from datamodule import T5NerFineTunerDataModule
 
 import pytorch_lightning as pl
-
 from setproctitle import setproctitle
 
+from datamodule import T5NerFineTunerDataModule
+from evaluation_config import args_dict
+from evaluation_module import T5NerFineTuner
 
 setproctitle("evaluate-t5-ner")
 

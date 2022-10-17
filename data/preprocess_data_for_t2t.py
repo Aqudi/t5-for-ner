@@ -1,6 +1,5 @@
-import re
 import os
-
+import re
 
 tags = ["QT", "PS", "LC", "DT", "TI", "OG"]
 tag_descriptions = ["수량", "사람", "장소", "날짜", "시간", "기관"]

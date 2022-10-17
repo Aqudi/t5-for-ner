@@ -1,6 +1,6 @@
 import os
 
-from datasets import load_dataset, DatasetDict
+from datasets import DatasetDict, load_dataset
 
 
 def load_t2t_dataset(train, test):
