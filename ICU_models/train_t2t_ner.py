@@ -1,6 +1,4 @@
-import os, sys
-
-sys.path.append("/home/work/team01")
+import os
 
 from data import (
     load_t2t_dataset,
@@ -11,21 +9,12 @@ from data import (
 import datasets
 from transformers import (
     T5TokenizerFast,
-    AutoTokenizer,
-    AutoModel,
     AutoModelForSeq2SeqLM,
-    T5ForConditionalGeneration,
     EarlyStoppingCallback,
 )
 from transformers.data.data_collator import DataCollatorForSeq2Seq
-from transformers import TrainingArguments, Seq2SeqTrainingArguments
-from transformers import Trainer, Seq2SeqTrainer
-import numpy as np
-import pandas as pd
-import evaluate
-import torch
-from seqeval import metrics as seqeval_metrics
-from torch import optim
+from transformers import Seq2SeqTrainingArguments
+from transformers import Seq2SeqTrainer
 from setproctitle import setproctitle
 
 
@@ -105,7 +94,6 @@ def train(dataset, args, cross_epoch=None):
 
 if __name__ == "__main__":
     import argparse
-    import json
 
     from utils.set_seed import set_seed
 
