@@ -1,13 +1,11 @@
 import os
 
+import pytorch_lightning as pl
+from datasets import load_from_disk
 from torch.utils.data import DataLoader
+from transformers import T5TokenizerFast
 
 from data import load_t2t_dataset
-
-from transformers import T5TokenizerFast
-from datasets import load_from_disk
-
-import pytorch_lightning as pl
 
 
 class T5NerFineTunerDataModule(pl.LightningDataModule):
@@ -19,6 +17,7 @@ class T5NerFineTunerDataModule(pl.LightningDataModule):
         batch_size,
         train_dataset,
         test_dataset,
+        cached_dataset_path="cached_dataset",
         **kwargs,
     ):
         super(T5NerFineTunerDataModule, self).__init__()

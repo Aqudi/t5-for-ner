@@ -1,57 +1,20 @@
 import os
 
-from data import (
-    load_t2t_dataset,
-    load_t2t_cross_validation_dataset,
-    shuffle_and_save_file,
-    t2t_train_dataset_path,
-)
 import datasets
-from transformers import (
-    T5TokenizerFast,
-    AutoModelForSeq2SeqLM,
-    EarlyStoppingCallback,
-)
-from transformers.data.data_collator import DataCollatorForSeq2Seq
-from transformers import Seq2SeqTrainingArguments
-from transformers import Seq2SeqTrainer
 from setproctitle import setproctitle
+from transformers import (AutoModelForSeq2SeqLM, EarlyStoppingCallback,
+                          Seq2SeqTrainer, Seq2SeqTrainingArguments,
+                          T5TokenizerFast)
+from transformers.data.data_collator import DataCollatorForSeq2Seq
 
-
-def get_tokenized_dataset(dataset, tokenizer, max_input_length, max_target_length):
-    def preprocess_function(examples):
-        model_inputs = tokenizer(
-            examples["sentence"], max_length=max_input_length, truncation=True
-        )
-        # Set up the tokenizer for targets
-        with tokenizer.as_target_tokenizer():
-            labels = tokenizer(
-                examples["label"], max_length=max_target_length, truncation=True
-            )
-
-        model_inputs["labels"] = labels["input_ids"]
-        return model_inputs
-
-    tokenized_datasets = dataset.map(preprocess_function, batched=True)
-    print("--------tokenized_datasets--------\n", tokenized_datasets)
-    # remove the columns with strings
-    tokenized_datasets = tokenized_datasets.remove_columns(["sentence", "label"])
-    return tokenized_datasets
-
+from data import load_t2t_cross_validation_dataset, shuffle_and_save_file
+from datamodule import T5NerFineTunerDataModule
 
 def train(dataset, args, cross_epoch=None):
     model = AutoModelForSeq2SeqLM.from_pretrained(args.checkpoint)
     tokenizer = T5TokenizerFast.from_pretrained(args.checkpoint)
     data_collator = DataCollatorForSeq2Seq(tokenizer=tokenizer, model=model)
-
-    tokenized_datasets = get_tokenized_dataset(
-        dataset,
-        tokenizer,
-        args.max_input_length,
-        args.max_target_length,
-    )
-
-    logging_steps = len(tokenized_datasets["train"]) // args.batch_size
+    logging_steps = len(dataset["train"]) // args.batch_size
 
     model_name = f"checkpoints/{args.output_dir}"
     if args.cross_validation and cross_epoch != None:
@@ -75,8 +38,8 @@ def train(dataset, args, cross_epoch=None):
     trainer = Seq2SeqTrainer(
         model=model,
         args=training_args,
-        train_dataset=tokenized_datasets["train"],
-        eval_dataset=tokenized_datasets["val"],
+        train_dataset=dataset["train"],
+        eval_dataset=dataset["val"],
         tokenizer=tokenizer,
         data_collator=data_collator,
         callbacks=[
@@ -115,8 +78,8 @@ if __name__ == "__main__":
     )
     parser.add_argument("--cross-validation", required=False, action="store_true")
     parser.add_argument("--fold", required=False, default=5)
-    parser.add_argument("--checkpoint", required=False, default="./model/kt-ulm-small")
-    parser.add_argument("--output_dir", required=False, default="kt-ulm-small")
+    parser.add_argument("--checkpoint", required=False, default="google/mt5-base")
+    parser.add_argument("--output_dir", required=False, default="google/mt5-base")
     parser.add_argument("--batch_size", type=int, required=False, default=12)
     parser.add_argument("--num_train_epochs", type=int, required=False, default=10)
     parser.add_argument("--learning_rate", type=float, required=False, default=2e-5)
@@ -125,9 +88,6 @@ if __name__ == "__main__":
     parser.add_argument("--early_stopping_patience", default=2, required=False)
 
     args = parser.parse_args()
-
-    max_input_length = args.max_input_length
-    max_target_length = args.max_target_length
 
     print(args.__dict__)
 
@@ -150,12 +110,20 @@ if __name__ == "__main__":
             print("-------- cross_dataset--------\n", cross_dataset)
             train(dataset=cross_dataset, args=args, cross_epoch=i)
     else:
-        train_data = load_t2t_dataset(args.train_dataset, args.test_dataset)["train"]
-        train_val_data = train_data.train_test_split(test_size=0.2)
+        datamodule = T5NerFineTunerDataModule(
+            tokenizer_name_or_path=args.checkpoint,
+            max_input_length=args.max_input_length,
+            max_target_length=args.max_target_length,
+            batch_size=args.batch_size,
+            train_dataset=args.train_dataset,
+            test_dataset=args.test_dataset,
+        )
+        datamodule.prepare_data()
+        datamodule.setup()
         dataset = datasets.DatasetDict(
             {
-                "train": train_val_data["train"],
-                "val": train_val_data["test"],
+                "train": datamodule.train_dataset,
+                "val": datamodule.val_dataset,
             },
         )
         print("-------- val_split_dataset--------\n", dataset)
