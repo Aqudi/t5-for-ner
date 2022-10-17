@@ -1,0 +1,191 @@
+split_6_tags = [
+    ["O", "O", "LC:서울시,LC:강남구", "O", "O", "O"],
+    ["O", "O", "LC:서울시 강남구", "O", "O", "O"],
+    ["O", "O", "LC:서울시,LC:강남구", "O", "O", "O"],
+    ["O", "PS:허태정", "O", "O", "O", "O"],
+    ["O", "PS:허태정", "O", "O", "O", "O"],
+    ["O", "O", "O", "O", "O", "O"],
+    ["O", "PS:허태정", "O", "O", "O", "O"],
+    ["O", "O", "O", "O", "O", "O"],
+]
+split_6_labels = [
+    ["O", "O", "LC:서울시,LC:강남구", "O", "O", "O"],
+    ["O", "O", "LC:서울시,LC:강남구", "O", "O", "O"],
+    ["O", "O", "LC:서울시 강남구", "O", "O", "O"],
+    ["O", "PS:감자튀김", "O", "O", "O", "O"],
+    ["O", "O", "LC:허태정", "O", "O", "O"],
+    ["O", "O", "O", "O", "O", "O"],
+    ["O", "O", "O", "O", "O", "O"],
+    ["O", "PS:허태정", "O", "O", "O", "O"],
+]
+
+
+ner_tag: QT p_words: ['O']
+ner_tag: QT l_words: ['O']
+0개, 0개 pass~
+ner_tag: PS p_words: ['O']
+ner_tag: PS l_words: ['O']
+0개, 0개 pass~
+ner_tag: LC p_words: ['', '서울시', '강남구']
+ner_tag: LC l_words: ['', '서울시', '강남구']
+<서울시>, <서울시>같음! tp: 0 -> 1
+단어 찾았으니까 <서울시> 지움!
+<강남구>, <강남구>같음! tp: 1 -> 2
+단어 찾았으니까 <강남구> 지움!
+[] 가 label과 매칭되지 못했음 fp: 0 -> 0
+ner_tag: DT p_words: ['O']
+ner_tag: DT l_words: ['O']
+0개, 0개 pass~
+ner_tag: TI p_words: ['O']
+ner_tag: TI l_words: ['O']
+0개, 0개 pass~
+ner_tag: OG p_words: ['O']
+ner_tag: OG l_words: ['O']
+0개, 0개 pass~
+tp: 2 fp: 0 fn: 0
+
+ner_tag: QT p_words: ['O']
+ner_tag: QT l_words: ['O']
+0개, 0개 pass~
+ner_tag: PS p_words: ['O']
+ner_tag: PS l_words: ['O']
+0개, 0개 pass~
+ner_tag: LC p_words: ['', '서울시 강남구']
+ner_tag: LC l_words: ['', '서울시', '강남구']
+<서울시> <서울시 강남구> p_word가 l_word로 시작! 0 -> 1
+단어 찾았으니까 <서울시 강남구> 지움!
+<강남구>가 predicted words에 없음! fn: 0 -> 1
+[] 가 label과 매칭되지 못했음 fp: 0 -> 0
+ner_tag: DT p_words: ['O']
+ner_tag: DT l_words: ['O']
+0개, 0개 pass~
+ner_tag: TI p_words: ['O']
+ner_tag: TI l_words: ['O']
+0개, 0개 pass~
+ner_tag: OG p_words: ['O']
+ner_tag: OG l_words: ['O']
+0개, 0개 pass~
+tp: 1 fp: 0 fn: 1
+
+ner_tag: QT p_words: ['O']
+ner_tag: QT l_words: ['O']
+0개, 0개 pass~
+ner_tag: PS p_words: ['O']
+ner_tag: PS l_words: ['O']
+0개, 0개 pass~
+ner_tag: LC p_words: ['', '서울시', '강남구']
+ner_tag: LC l_words: ['', '서울시 강남구']
+<서울시 강남구> <서울시> l_word가 p_word로 시작! 0 -> 단어 찾았으니까 <서울시> 지움!
+['강남구'] 가 label과 매칭되지 못했음 fp: 0 -> 1
+ner_tag: DT p_words: ['O']
+ner_tag: DT l_words: ['O']
+0개, 0개 pass~
+ner_tag: TI p_words: ['O']
+ner_tag: TI l_words: ['O']
+0개, 0개 pass~
+ner_tag: OG p_words: ['O']
+ner_tag: OG l_words: ['O']
+0개, 0개 pass~
+tp: 1 fp: 1 fn: 0
+
+ner_tag: QT p_words: ['O']
+ner_tag: QT l_words: ['O']
+0개, 0개 pass~
+ner_tag: PS p_words: ['', '허태정']
+ner_tag: PS l_words: ['', '감자튀김']
+<감자튀김>가 predicted words에 없음! fn: 0 -> 1
+['허태정'] 가 label과 매칭되지 못했음 fp: 0 -> 1
+ner_tag: LC p_words: ['O']
+ner_tag: LC l_words: ['O']
+0개, 0개 pass~
+ner_tag: DT p_words: ['O']
+ner_tag: DT l_words: ['O']
+0개, 0개 pass~
+ner_tag: TI p_words: ['O']
+ner_tag: TI l_words: ['O']
+0개, 0개 pass~
+ner_tag: OG p_words: ['O']
+ner_tag: OG l_words: ['O']
+0개, 0개 pass~
+tp: 0 fp: 1 fn: 1
+
+ner_tag: QT p_words: ['O']
+ner_tag: QT l_words: ['O']
+0개, 0개 pass~
+ner_tag: PS p_words: ['', '허태정']
+ner_tag: PS l_words: ['O']
+0개, N개 fp: 0 -> 1
+ner_tag: LC p_words: ['O']
+ner_tag: LC l_words: ['', '허태정']
+N개, 0개 fn: 0 -> 1
+ner_tag: DT p_words: ['O']
+ner_tag: DT l_words: ['O']
+0개, 0개 pass~
+ner_tag: TI p_words: ['O']
+ner_tag: TI l_words: ['O']
+0개, 0개 pass~
+ner_tag: OG p_words: ['O']
+ner_tag: OG l_words: ['O']
+0개, 0개 pass~
+tp: 0 fp: 1 fn: 1
+
+ner_tag: QT p_words: ['O']
+ner_tag: QT l_words: ['O']
+0개, 0개 pass~
+ner_tag: PS p_words: ['O']
+ner_tag: PS l_words: ['O']
+0개, 0개 pass~
+ner_tag: LC p_words: ['O']
+ner_tag: LC l_words: ['O']
+0개, 0개 pass~
+ner_tag: DT p_words: ['O']
+ner_tag: DT l_words: ['O']
+0개, 0개 pass~
+ner_tag: TI p_words: ['O']
+ner_tag: TI l_words: ['O']
+0개, 0개 pass~
+ner_tag: OG p_words: ['O']
+ner_tag: OG l_words: ['O']
+0개, 0개 pass~
+tp: 0 fp: 0 fn: 0
+
+ner_tag: QT p_words: ['O']
+ner_tag: QT l_words: ['O']
+0개, 0개 pass~
+ner_tag: PS p_words: ['', '허태정']
+ner_tag: PS l_words: ['O']
+0개, N개 fp: 0 -> 1
+ner_tag: LC p_words: ['O']
+ner_tag: LC l_words: ['O']
+0개, 0개 pass~
+ner_tag: DT p_words: ['O']
+ner_tag: DT l_words: ['O']
+0개, 0개 pass~
+ner_tag: TI p_words: ['O']
+ner_tag: TI l_words: ['O']
+0개, 0개 pass~
+ner_tag: OG p_words: ['O']
+ner_tag: OG l_words: ['O']
+0개, 0개 pass~
+tp: 0 fp: 1 fn: 0
+
+ner_tag: QT p_words: ['O']
+ner_tag: QT l_words: ['O']
+0개, 0개 pass~
+ner_tag: PS p_words: ['O']
+ner_tag: PS l_words: ['', '허태정']
+N개, 0개 fn: 0 -> 1
+ner_tag: LC p_words: ['O']
+ner_tag: LC l_words: ['O']
+0개, 0개 pass~
+ner_tag: DT p_words: ['O']
+ner_tag: DT l_words: ['O']
+0개, 0개 pass~
+ner_tag: TI p_words: ['O']
+ner_tag: TI l_words: ['O']
+0개, 0개 pass~
+ner_tag: OG p_words: ['O']
+ner_tag: OG l_words: ['O']
+0개, 0개 pass~
+tp: 0 fp: 0 fn: 1
+

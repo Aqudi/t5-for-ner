@@ -1,0 +1,8 @@
+2022-09-28 15:34:06.398167
+0.8624413145539906
+config: {'output_dir': '', 'model_name_or_path': '/home/work/team01/ICU_models/template-ULM_Y/checkpoints/kt-ulm-small-case1/checkpoint-7500', 'tokenizer_name_or_path': '/home/work/team01/ICU_models/template-ULM_Y/checkpoints/kt-ulm-small-case1/checkpoint-7500', 'cached_dataset_path': 'cached_dataset', 'max_seq_length': 256, 'learning_rate': 0.0003, 'weight_decay': 0.0, 'adam_epsilon': 1e-08, 'warmup_steps': 0, 'batch_size': 32, 'max_epochs': 15, 'gradient_accumulation_steps': 16, 'max_grad_norm': 1.0, 'seed': 928, 'accelerator': 'gpu', 'devices': 1, 'debug': False}
+
+2022-09-28 15:40:44.553087
+0.9032880518678604
+config: {'output_dir': '', 'model_name_or_path': '/home/work/team01/ICU_models/template-ULM_Y/checkpoints/kt-ulm-small-case3/checkpoint-11500', 'tokenizer_name_or_path': '/home/work/team01/ICU_models/template-ULM_Y/checkpoints/kt-ulm-small-case3/checkpoint-11500', 'cached_dataset_path': 'cached_dataset', 'max_seq_length': 256, 'learning_rate': 0.0003, 'weight_decay': 0.0, 'adam_epsilon': 1e-08, 'warmup_steps': 0, 'batch_size': 32, 'max_epochs': 15, 'gradient_accumulation_steps': 16, 'max_grad_norm': 1.0, 'seed': 928, 'accelerator': 'gpu', 'devices': 1, 'debug': False}
+

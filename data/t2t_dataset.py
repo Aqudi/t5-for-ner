@@ -1,18 +1,16 @@
 import os
 
-from datasets import load_dataset, DatasetDict
-
-from data.preprocess import t2t_test, t2t_train
+from datasets import DatasetDict, load_dataset
 
 
-def load_t2t_dataset():
+def load_t2t_dataset(train, test):
     dataset = load_dataset(
         "csv",
         column_names=["sentence", "label"],
         delimiter="\t",
         data_files={
-            "train": t2t_train,
-            "test": t2t_test,
+            "train": train,
+            "test": test,
         },
     )
     return dataset
@@ -39,9 +37,6 @@ def shuffle_and_save_file(path, destination_path):
 
 
 def load_t2t_cross_validation_dataset(path=None, fold=5):
-    if not path:
-        path = t2t_train
-
     percent = 100 // fold
     train_data = load_dataset(
         "csv",
